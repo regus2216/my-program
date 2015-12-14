@@ -1,0 +1,9 @@
+c:\users\regus_desktop\documents\visual studio 2013\Projects\Teaching-Drow-Program\Teaching-Drow-Program\bin\Debug\Teaching-Drow-Program.exe.config
+C:\Users\regus_desktop\Documents\GitHub\my-program\Teaching-Drow-Program\Teaching-Drow-Program\bin\Debug\Teaching-Drow-Program.exe.config
+C:\Users\regus_desktop\Documents\GitHub\my-program\Teaching-Drow-Program\Teaching-Drow-Program\bin\Debug\Teaching-Drow-Program.exe
+C:\Users\regus_desktop\Documents\GitHub\my-program\Teaching-Drow-Program\Teaching-Drow-Program\bin\Debug\Teaching-Drow-Program.pdb
+C:\Users\regus_desktop\Documents\GitHub\my-program\Teaching-Drow-Program\Teaching-Drow-Program\obj\Debug\Teaching-Drow-Program.csprojResolveAssemblyReference.cache
+C:\Users\regus_desktop\Documents\GitHub\my-program\Teaching-Drow-Program\Teaching-Drow-Program\obj\Debug\Teaching_Drow_Program.Properties.Resources.resources
+C:\Users\regus_desktop\Documents\GitHub\my-program\Teaching-Drow-Program\Teaching-Drow-Program\obj\Debug\Teaching-Drow-Program.csproj.GenerateResource.Cache
+C:\Users\regus_desktop\Documents\GitHub\my-program\Teaching-Drow-Program\Teaching-Drow-Program\obj\Debug\Teaching-Drow-Program.exe
+C:\Users\regus_desktop\Documents\GitHub\my-program\Teaching-Drow-Program\Teaching-Drow-Program\obj\Debug\Teaching-Drow-Program.pdb
