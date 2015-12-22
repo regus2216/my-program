@@ -21,23 +21,24 @@ namespace Teaching_Drow_Program
         private void Form1_Load(object sender, EventArgs e)
         {
             _bitmap = new Bitmap(picNote.Width, picNote.Height);//bitmapの初期化
+
+
+            cmbWidth.SelectedIndex = 0;//太さのコンボボックスのデフォルト値の設定
+
+            btn1.BackColor = Color.Black;
+            btn2.BackColor = Color.White;
+            btn3.BackColor = Color.Blue ;
+            btn4.BackColor = Color.Red;
+            btn5.BackColor = Color.Green;
+            btn6.BackColor = Color.Yellow;
+            btn7.BackColor = Color.Pink;
+            btn8.BackColor = Color.SkyBlue;
         }
         
 
         Bitmap _bitmap = null;//bitmapのインスタンス変数
-        private void button1_Click(object sender, EventArgs e)
-        {
-            /*
-            using (Graphics g = picNote.CreateGraphics())//線とか色を描くのに必要
-            { 
-                g.DrawLine(Pens.Blue, 100, 100, 300, 300);
-            };
-             */
-            using (Graphics g = Graphics.FromImage(_bitmap)) {
-                g.DrawLine(Pens.Blue, 100, 100, 300, 300);
-            };
-            picNote.Image = _bitmap;//自動的に再描画
-        }
+     
+
 
         bool drawFlg = false;//true：描画中 
 
@@ -49,9 +50,13 @@ namespace Teaching_Drow_Program
             //描画中でなければ　処理を抜ける
             if (drawFlg == false) return;
 
+            int penWidth = Int32.Parse(cmbWidth.SelectedItem.ToString());
+
+            Pen pen = new Pen(_selecredColor,penWidth);//ペンの作成
+
             using (Graphics g = Graphics.FromImage(_bitmap))
             {
-                g.DrawLine(Pens.Black, oldLocation, e.Location);
+                g.DrawLine(pen, oldLocation, e.Location);
             };
             picNote.Image = _bitmap;//自動的に再描画
 
@@ -70,6 +75,16 @@ namespace Teaching_Drow_Program
 
             //描画中にする
             drawFlg = true;
+        }
+
+
+        Color _selecredColor = Color.Black;//選択された色
+
+
+        //すべてのボタンクリックイベント
+        private void btn_Click(object sender, EventArgs e)
+        {
+            _selecredColor = ((Button)sender).BackColor;
         }
 
         
