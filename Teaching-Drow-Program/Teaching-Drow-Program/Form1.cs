@@ -42,7 +42,7 @@ namespace Teaching_Drow_Program
 
         bool drawFlg = false;//true：描画中 
 
-        Point oldLocation = new Point();//線の終点を保存
+        Point oldLocation = new Point();//線の始点を保存
 
         private void picNote_MouseMove(object sender, MouseEventArgs e)
         {
@@ -56,11 +56,17 @@ namespace Teaching_Drow_Program
 
             using (Graphics g = Graphics.FromImage(_bitmap))
             {
-                g.DrawLine(pen, oldLocation, e.Location);
-            };
-            picNote.Image = _bitmap;//自動的に再描画
+              
+               //g.DrawLine(pen, oldLocation, e.Location);//線の描画
+               // g.FillEllipse(Brushes.Red,e.Location.X,e.Location.Y,20,20);//丸線の描画
 
-            oldLocation = e.Location;//新しい位置を保存
+                draw(g, oldLocation, e.Location);
+                
+           
+            };
+            picNote.Image = _bitmap;//自動的に再描画 これないとfromが画面外にでると消える
+           
+            oldLocation = e.Location;//新しい始点を保存
         }
 
         private void picNote_MouseUp(object sender, MouseEventArgs e)
@@ -87,6 +93,33 @@ namespace Teaching_Drow_Program
             _selecredColor = ((Button)sender).BackColor;
         }
 
-        
+        private void button1_Click(object sender, EventArgs e){}
+
+        private void draw(Graphics g ,Point xy1 ,Point xy2)
+        {
+
+            
+                int penWidth = 20;
+                float y = (float)xy1.Y;
+
+                float a = ((float)xy2.Y - xy1.Y) / ((float)xy2.X - xy1.X);//傾きの計算
+
+                //ぺんの向きが左向きならswap
+                if (xy1.X > xy2.X)
+                {
+                    Point p = xy1;
+                    xy1 = xy2;
+                    xy2 = p;
+                }
+
+                for (int x = xy1.X; x <= xy2.X; x++)
+                {
+                    RectangleF rect = new RectangleF(x, y, penWidth, penWidth);
+                    g.FillEllipse(Brushes.Red, rect);
+                    y = y + a;
+                }
+            
+        }
+
     }
 }
