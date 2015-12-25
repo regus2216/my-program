@@ -170,6 +170,7 @@
             this.cmbWidth.Name = "cmbWidth";
             this.cmbWidth.Size = new System.Drawing.Size(121, 20);
             this.cmbWidth.TabIndex = 8;
+           
             // 
             // button1
             // 
