@@ -66,7 +66,7 @@ namespace Teaching_Drow_Program
 
             int penWidth = Int32.Parse(cmbWidth.SelectedItem.ToString());//コンボボックスから値を持ってくる
 
-            Pen pen = new Pen(_selecredColor, penWidth);//ペンの作成
+           // Pen pen = new Pen(_selecredColor, penWidth);//ペンの作成
 
             using (Graphics g = Graphics.FromImage(_bitmap))
             {
@@ -90,7 +90,8 @@ namespace Teaching_Drow_Program
             _selecredColor = ((Button)sender).BackColor;
         }
 
-        private void button1_Click(object sender, EventArgs e){}
+        private void button1_Click(object sender, EventArgs e){
+        }
 
         private void draw(Graphics g ,Point xy1 ,Point xy2,int penWidth)
         {
